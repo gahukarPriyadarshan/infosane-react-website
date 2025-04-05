@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 
-const NewArrivals = () => {
+const NewArrivals = ({heading, products}) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -66,7 +66,7 @@ const NewArrivals = () => {
       {/* Section Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-semibold text-gray-800">
-          Our New Arrivals
+          {heading || "New Arrivals"}
         </h2>
 
         {/* View All Button - Top Right */}
@@ -80,7 +80,7 @@ const NewArrivals = () => {
 
       {/* Carousel */}
       <Slider {...settings}>
-        {newArrivals.map((item) => (
+        {products.map((item) => (
           <div key={item.id} className="px-2">
             {/* Wrap Card inside Link for Navigation */}
             <Link to={`/product/${item.id}`}>
