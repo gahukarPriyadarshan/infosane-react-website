@@ -1,11 +1,15 @@
-import NewArrivals from "./NewArrivals.jsx";
+import NewArrivals from "./FeaturedProducts.jsx";
 
-
-const big_list =[
+const big_list = [
   {
     heading: "Our New Arrivals",
-    products :[
-      { id: 1, img: "/images/sneakers.png", name: "Sneakers", price: "Rs 22460" },
+    products: [
+      {
+        id: 1,
+        img: "/images/sneakers.png",
+        name: "Sneakers",
+        price: "Rs 22460",
+      },
       {
         id: 2,
         img: "/images/luxurywatch.png",
@@ -36,19 +40,29 @@ const big_list =[
         name: "Luxury Perfume",
         price: "Rs 20000",
       },
-      { id: 7, img: "/images/shirt.png", name: "Men's Shirt", price: "Rs 3000" },
+      {
+        id: 7,
+        img: "/images/shirt.png",
+        name: "Men's Shirt",
+        price: "Rs 3000",
+      },
       {
         id: 8,
         img: "/images/dress.png",
         name: "Women's Dress",
         price: "Rs 4445",
       },
-    ]
+    ],
   },
   {
     heading: "Trending",
-    products :[
-      { id: 1, img: "/images/sneakers.png", name: "Sneakers", price: "Rs 22460" },
+    products: [
+      {
+        id: 1,
+        img: "/images/sneakers.png",
+        name: "Sneakers",
+        price: "Rs 22460",
+      },
       {
         id: 2,
         img: "/images/luxurywatch.png",
@@ -79,22 +93,31 @@ const big_list =[
         name: "Luxury Perfume",
         price: "Rs 20000",
       },
-      { id: 7, img: "/images/shirt.png", name: "Men's Shirt", price: "Rs 3000" },
+      {
+        id: 7,
+        img: "/images/shirt.png",
+        name: "Men's Shirt",
+        price: "Rs 3000",
+      },
       {
         id: 8,
         img: "/images/dress.png",
         name: "Women's Dress",
         price: "Rs 4445",
       },
-    ]
-  }
-]
+    ],
+  },
+];
 
 const ProductList = () => {
   return (
     <>
       {big_list?.map((item, index) => (
-        <NewArrivals key={index} heading={item.heading} products={item.products} />
+        <NewArrivals
+          key={index}
+          heading={item.heading}
+          products={item.products}
+        />
       ))}
     </>
   );

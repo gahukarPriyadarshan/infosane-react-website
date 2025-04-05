@@ -1,13 +1,30 @@
-import { AppBar, Toolbar, IconButton, Badge, InputBase, Menu, MenuItem } from "@mui/material";
-import { Menu as MenuIcon, ShoppingCart, AccountCircle, Search } from "@mui/icons-material";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Badge,
+  InputBase,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import {
+  Menu as MenuIcon,
+  ShoppingCart,
+  AccountCircle,
+  Search,
+} from "@mui/icons-material";
 import { useState } from "react";
-import Sidebar from "./Sidebar"; 
-import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import { Link, useNavigate } from "react-router-dom";
+
+
+
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMenuOpen = Boolean(anchorEl);
+  const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -23,7 +40,10 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="fixed" className="bg-white shadow-md py-2 border-b border-gray-200 ">
+      <AppBar
+        position="fixed"
+        className="bg-white shadow-md py-2 border-b border-gray-200 "
+      >
         <Toolbar className="flex items-center justify-between px-4 md:px-8">
           {/* Hamburger Icon */}
           <div className="flex items-center gap-3">
@@ -48,14 +68,13 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center gap-6">
-          <Link to="/cart">
+            <Link to="/cart">
               <IconButton>
                 <Badge badgeContent={1} color="error">
                   <ShoppingCart className="text-gray-700" fontSize="large" />
                 </Badge>
               </IconButton>
             </Link>
-            
 
             <IconButton onClick={handleProfileMenuOpen}>
               <AccountCircle className="text-gray-700" fontSize="large" />
@@ -68,7 +87,15 @@ const Navbar = () => {
       <Menu anchorEl={anchorEl} open={isMenuOpen} onClose={handleMenuClose}>
         <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
-        <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+        <MenuItem
+          onClick={() => {
+            localStorage.removeItem("isAuthenticated");
+            handleMenuClose();
+            navigate("/login");
+          }}
+        >
+          Logout
+        </MenuItem>
       </Menu>
 
       {/* Sidebar Component */}

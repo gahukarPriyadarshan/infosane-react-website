@@ -1,4 +1,4 @@
-import NewArrivals from "../components/NewArrivals";
+import NewArrivals from "../components/FeaturedProducts";
 import { useNavigate } from "react-router-dom";
 
 const NewArrivalsPage = () => {
@@ -8,10 +8,25 @@ const NewArrivalsPage = () => {
     { id: 7, img: "/images/shirt.png", name: "Men's Shirt", price: "Rs30" },
     { id: 8, img: "/images/dress.png", name: "Women's Dress", price: "$45" },
     { id: 1, img: "/images/sneakers.png", name: "Sneakers", price: "$60" },
-    { id: 3, img: "/images/luxurywatch.png", name: "Luxury Watch", price: "$120" },
+    {
+      id: 3,
+      img: "/images/luxurywatch.png",
+      name: "Luxury Watch",
+      price: "$120",
+    },
     { id: 4, img: "/images/bag.png", name: "Leather Handbag", price: "$90" },
-    { id: 5, img: "/images/winterjacket.png", name: "Winter Jacket", price: "$110" },
-    { id: 6, img: "/images/luxuryperfume.png", name: "Branded Perfume", price: "$70" },
+    {
+      id: 5,
+      img: "/images/winterjacket.png",
+      name: "Winter Jacket",
+      price: "$110",
+    },
+    {
+      id: 6,
+      img: "/images/luxuryperfume.png",
+      name: "Branded Perfume",
+      price: "$70",
+    },
     { id: 9, img: "/images/jeans.png", name: "Denim Jeans", price: "$50" },
   ];
 

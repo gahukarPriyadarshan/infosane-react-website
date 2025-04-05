@@ -1,6 +1,5 @@
 import BannerCarousel from "../components/BannerCarousel";
 import Categories from "../components/Categories";
-import NewArrivals from "../components/NewArrivals";
 import SummerCollection from "../components/SummerCollection";
 import BestSelling from "../components/BestSelling";
 import ProductList from "../components/ProductList.jsx";
@@ -11,7 +10,7 @@ const HomePage = () => {
       <BannerCarousel />
       <Categories />
       <ProductList />
-      <SummerCollection/>
+      <SummerCollection />
       <BestSelling />
     </div>
   );

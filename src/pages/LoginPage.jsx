@@ -32,6 +32,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
     if (tab === 0) {
       // Login check
       if (email === "test@example.com" && password === "1234") {
+        localStorage.setItem("isAuthenticated", "true");
         setIsAuthenticated(true);
         navigate("/"); // 👈 Redirect to homepage
       } else {
